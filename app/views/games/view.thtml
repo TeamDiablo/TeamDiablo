@@ -1,0 +1,29 @@
+<div class="game">
+<h2>View Game</h2>
+
+<dl>
+	<dt>Gid</dt>
+	<dd>&nbsp;<?php echo $game['Game']['gid']?></dd>
+	<dt>Oid</dt>
+	<dd>&nbsp;<?php echo $game['Game']['oid']?></dd>
+	<dt>Sid</dt>
+	<dd>&nbsp;<?php echo $game['Game']['sid']?></dd>
+	<dt>Location</dt>
+	<dd>&nbsp;<?php echo $game['Game']['location']?></dd>
+	<dt>Skill</dt>
+	<dd>&nbsp;<?php echo $game['Game']['skill']?></dd>
+	<dt>Numpeople</dt>
+	<dd>&nbsp;<?php echo $game['Game']['numpeople']?></dd>
+	<dt>Date</dt>
+	<dd>&nbsp;<?php echo $game['Game']['date']?></dd>
+	<dt>Time</dt>
+	<dd>&nbsp;<?php echo $game['Game']['time']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Edit Game',   '/games/edit/' . $game['Game']['gid']) ?> </li>
+	<li><?php echo $html->link('Delete Game', '/games/delete/' . $game['Game']['gid'], null, 'Are you sure you want to delete: id ' . $game['Game']['gid'] . '?') ?> </li>
+	<li><?php echo $html->link('List Games',   '/games/index') ?> </li>
+	<li><?php echo $html->link('New Game',	'/games/add') ?> </li>
+</ul>
+
+</div>

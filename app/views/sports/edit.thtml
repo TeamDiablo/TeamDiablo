@@ -1,0 +1,16 @@
+<h2>Edit Sport</h2>
+<form action="<?php echo $html->url('/sports/edit/'.$html->tagValue('Sport/sid')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Sport/name', 'Name');?>
+ 	<?php echo $html->input('Sport/name', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Sport/name', 'Please enter the Name.');?>
+</div>
+<?php echo $html->hidden('Sport/sid')?>
+<div class="submit">
+	<?php echo $html->submit('Save');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Delete','/sports/delete/' . $html->tagValue('Sport/sid'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Sport/sid'));?>
+<li><?php echo $html->link('List Sports', '/sports/index')?></li>
+</ul>

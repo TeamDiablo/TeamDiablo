@@ -1,0 +1,38 @@
+<div class="games">
+<h2>List Games</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Gid</th>
+	<th>Oid</th>
+	<th>Sid</th>
+	<th>Location</th>
+	<th>Skill</th>
+	<th>Numpeople</th>
+	<th>Date</th>
+	<th>Time</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($games as $game): ?>
+<tr>
+	<td><?php echo $game['Game']['gid']; ?></td>
+	<td><?php echo $game['Game']['oid']; ?></td>
+	<td><?php echo $game['Game']['sid']; ?></td>
+	<td><?php echo $game['Game']['location']; ?></td>
+	<td><?php echo $game['Game']['skill']; ?></td>
+	<td><?php echo $game['Game']['numpeople']; ?></td>
+	<td><?php echo $game['Game']['date']; ?></td>
+	<td><?php echo $game['Game']['time']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/games/view/' . $game['Game']['gid'])?>
+		<?php echo $html->link('Edit','/games/edit/' . $game['Game']['gid'])?>
+		<?php echo $html->link('Delete','/games/delete/' . $game['Game']['gid'], null, 'Are you sure you want to delete id ' . $game['Game']['gid'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Game', '/games/add'); ?></li>
+</ul>
+</div>

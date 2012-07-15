@@ -1,0 +1,19 @@
+<h2>New Friend</h2>
+<form action="<?php echo $html->url('/admin/friends/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Friend/pid1', 'Pid1');?>
+ 	<?php echo $html->input('Friend/pid1', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Friend/pid1', 'Please enter the Pid1.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Friend/pid2', 'Pid2');?>
+ 	<?php echo $html->input('Friend/pid2', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Friend/pid2', 'Please enter the Pid2.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Friends', '/admin/friends/index')?></li>
+</ul>

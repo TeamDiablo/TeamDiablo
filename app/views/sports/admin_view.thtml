@@ -1,0 +1,17 @@
+<div class="sport">
+<h2>View Sport</h2>
+
+<dl>
+	<dt>Sid</dt>
+	<dd>&nbsp;<?php echo $sport['Sport']['sid']?></dd>
+	<dt>Name</dt>
+	<dd>&nbsp;<?php echo $sport['Sport']['name']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Edit Sport',   '/admin/sports/edit/' . $sport['Sport']['sid']) ?> </li>
+	<li><?php echo $html->link('Delete Sport', '/admin/sports/delete/' . $sport['Sport']['sid'], null, 'Are you sure you want to delete: id ' . $sport['Sport']['sid'] . '?') ?> </li>
+	<li><?php echo $html->link('List Sports',   '/admin/sports/index') ?> </li>
+	<li><?php echo $html->link('New Sport',	'/admin/sports/add') ?> </li>
+</ul>
+
+</div>

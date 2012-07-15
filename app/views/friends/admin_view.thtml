@@ -1,0 +1,17 @@
+<div class="friend">
+<h2>View Friend</h2>
+
+<dl>
+	<dt>Pid1</dt>
+	<dd>&nbsp;<?php echo $friend['Friend']['pid1']?></dd>
+	<dt>Pid2</dt>
+	<dd>&nbsp;<?php echo $friend['Friend']['pid2']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Edit Friend',   '/admin/friends/edit/' . $friend['Friend']['no']) ?> </li>
+	<li><?php echo $html->link('Delete Friend', '/admin/friends/delete/' . $friend['Friend']['no'], null, 'Are you sure you want to delete: id ' . $friend['Friend']['no'] . '?') ?> </li>
+	<li><?php echo $html->link('List Friends',   '/admin/friends/index') ?> </li>
+	<li><?php echo $html->link('New Friend',	'/admin/friends/add') ?> </li>
+</ul>
+
+</div>

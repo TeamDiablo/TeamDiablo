@@ -1,0 +1,18 @@
+<h2>Login</h2>
+
+<form action="<?php echo $html->url('/users/login'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('users/username', 'User Name');?>
+ 	<?php echo $html->input('users/username', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/username', 'User Name');?>
+</div>
+
+<div class="required"> 
+	<?php echo $form->labelTag('users/password', 'Password');?>
+ 	<?php echo $html->input('users/password', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/password', 'Password.');?>
+</div>
+
+	<?php echo $html->submit('Login');?>
+</div>
+</form>

@@ -1,0 +1,37 @@
+<h2>Register</h2>
+
+<form action="<?php echo $html->url('/users/register'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('users/username', 'User Name');?>
+ 	<?php echo $html->input('users/username', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/username', 'User Name');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('users/first_name', 'First Name');?>
+ 	<?php echo $html->input('users/first_name', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/first_name', 'First Name');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('users/last_name', 'Last Name');?>
+ 	<?php echo $html->input('users/last_name', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/last_name', 'Last Name');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('users/password', 'Password');?>
+ 	<?php echo $html->input('users/password', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/password', 'Password.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('users/password_confirm', 'Confirm Password');?>
+ 	<?php echo $html->input('users/password_confirm', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/password_confirm', 'Confirm Password');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('users/email', 'Email');?>
+ 	<?php echo $html->input('users/email', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('users/email', 'Email');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Register');?>
+</div>
+</form>

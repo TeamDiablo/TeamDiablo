@@ -1,0 +1,46 @@
+<h2>Edit Game</h2>
+<form action="<?php echo $html->url('/games/edit/'.$html->tagValue('Game/gid')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Game/oid', 'Oid');?>
+ 	<?php echo $html->input('Game/oid', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Game/oid', 'Please enter the Oid.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Game/sid', 'Sid');?>
+ 	<?php echo $html->input('Game/sid', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Game/sid', 'Please enter the Sid.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Game/location', 'Location');?>
+ 	<?php echo $html->input('Game/location', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Game/location', 'Please enter the Location.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Game/skill', 'Skill');?>
+ 	<?php echo $html->input('Game/skill', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Game/skill', 'Please enter the Skill.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Game/numpeople', 'Numpeople');?>
+ 	<?php echo $html->input('Game/numpeople', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Game/numpeople', 'Please enter the Numpeople.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Game/date', 'Date');?>
+ 	<?php echo $html->dateTimeOptionTag('Game/date', 'MDY' , 'NONE', $html->tagValue('Game/date'), array());?>
+	<?php echo $html->tagErrorMsg('Game/date', 'Please select the Date.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Game/time', 'Time');?>
+ 
+	\<?php echo $html->dateTimeOptionTag('Game/time', 'NONE', '24', $html->tagValue('Game/time'), array());?>
+</div>
+<?php echo $html->hidden('Game/gid')?>
+<div class="submit">
+	<?php echo $html->submit('Save');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Delete','/games/delete/' . $html->tagValue('Game/gid'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Game/gid'));?>
+<li><?php echo $html->link('List Games', '/games/index')?></li>
+</ul>

@@ -1,0 +1,19 @@
+<h2>New Sport</h2>
+<form action="<?php echo $html->url('/sports/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Sport/sid', 'Sid');?>
+ 	<?php echo $html->input('Sport/sid', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Sport/sid', 'Please enter the Sid.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Sport/name', 'Name');?>
+ 	<?php echo $html->input('Sport/name', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Sport/name', 'Please enter the Name.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add'); ?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Sports', '/sports/index')?></li>
+</ul>

@@ -1,0 +1,21 @@
+<h2>Edit Friend</h2>
+<form action="<?php echo $html->url('/friends/edit/'.$html->tagValue('Friend/no')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Friend/pid1', 'Pid1');?>
+ 	<?php echo $html->input('Friend/pid1', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Friend/pid1', 'Please enter the Pid1.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Friend/pid2', 'Pid2');?>
+ 	<?php echo $html->input('Friend/pid2', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Friend/pid2', 'Please enter the Pid2.');?>
+</div>
+<?php echo $html->hidden('Friend/no')?>
+<div class="submit">
+	<?php echo $html->submit('Save');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Delete','/friends/delete/' . $html->tagValue('Friend/no'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Friend/no'));?>
+<li><?php echo $html->link('List Friends', '/friends/index')?></li>
+</ul>

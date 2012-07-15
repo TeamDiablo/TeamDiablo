@@ -1,0 +1,44 @@
+<h2>New User</h2>
+<form action="<?php echo $html->url('/users/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('User/username', 'Username');?>
+ 	<?php echo $html->input('User/username', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('User/username', 'Please enter the Username.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('User/password', 'Password');?>
+ 	<?php echo $html->input('User/password', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('User/password', 'Please enter the Password.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('User/first_name', 'First Name');?>
+ 	<?php echo $html->input('User/first_name', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('User/first_name', 'Please enter the First Name.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('User/last_name', 'Last Name');?>
+ 	<?php echo $html->input('User/last_name', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('User/last_name', 'Please enter the Last Name.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('User/last_login', 'Last Login');?>
+ 	<?php echo $html->dateTimeOptionTag('User/last_login', 'MDY' , '12', $html->tagValue('User/last_login'), array());?>
+	<?php echo $html->tagErrorMsg('User/last_login', 'Please select the Last Login.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('User/email', 'Email');?>
+ 	<?php echo $html->input('User/email', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('User/email', 'Please enter the Email.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('User/last_generation_of_email', 'Last Generation Of Email');?>
+ 	<?php echo $html->dateTimeOptionTag('User/last_generation_of_email', 'MDY' , '12', $html->tagValue('User/last_generation_of_email'), array());?>
+	<?php echo $html->tagErrorMsg('User/last_generation_of_email', 'Please select the Last Generation Of Email.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Users', '/users/index')?></li>
+</ul>

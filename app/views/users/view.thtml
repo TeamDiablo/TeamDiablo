@@ -1,0 +1,33 @@
+<div class="user">
+<h2>View User</h2>
+
+<dl>
+	<dt>Uid</dt>
+	<dd>&nbsp;<?php echo $user['User']['uid']?></dd>
+	<dt>Username</dt>
+	<dd>&nbsp;<?php echo $user['User']['username']?></dd>
+	<dt>Password</dt>
+	<dd>&nbsp;<?php echo $user['User']['password']?></dd>
+	<dt>First Name</dt>
+	<dd>&nbsp;<?php echo $user['User']['first_name']?></dd>
+	<dt>Last Name</dt>
+	<dd>&nbsp;<?php echo $user['User']['last_name']?></dd>
+	<dt>Created</dt>
+	<dd>&nbsp;<?php echo $user['User']['created']?></dd>
+	<dt>Modified</dt>
+	<dd>&nbsp;<?php echo $user['User']['modified']?></dd>
+	<dt>Last Login</dt>
+	<dd>&nbsp;<?php echo $user['User']['last_login']?></dd>
+	<dt>Email</dt>
+	<dd>&nbsp;<?php echo $user['User']['email']?></dd>
+	<dt>Last Generation Of Email</dt>
+	<dd>&nbsp;<?php echo $user['User']['last_generation_of_email']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Edit User',   '/users/edit/' . $user['User']['uid']) ?> </li>
+	<li><?php echo $html->link('Delete User', '/users/delete/' . $user['User']['uid'], null, 'Are you sure you want to delete: id ' . $user['User']['uid'] . '?') ?> </li>
+	<li><?php echo $html->link('List Users',   '/users/index') ?> </li>
+	<li><?php echo $html->link('New User',	'/users/add') ?> </li>
+</ul>
+
+</div>

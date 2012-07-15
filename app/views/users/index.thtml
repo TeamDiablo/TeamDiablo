@@ -1,0 +1,42 @@
+<div class="users">
+<h2>List Users</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Uid</th>
+	<th>Username</th>
+	<th>Password</th>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Created</th>
+	<th>Modified</th>
+	<th>Last Login</th>
+	<th>Email</th>
+	<th>Last Generation Of Email</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($users as $user): ?>
+<tr>
+	<td><?php echo $user['User']['uid']; ?></td>
+	<td><?php echo $user['User']['username']; ?></td>
+	<td><?php echo $user['User']['password']; ?></td>
+	<td><?php echo $user['User']['first_name']; ?></td>
+	<td><?php echo $user['User']['last_name']; ?></td>
+	<td><?php echo $user['User']['created']; ?></td>
+	<td><?php echo $user['User']['modified']; ?></td>
+	<td><?php echo $user['User']['last_login']; ?></td>
+	<td><?php echo $user['User']['email']; ?></td>
+	<td><?php echo $user['User']['last_generation_of_email']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/users/view/' . $user['User']['uid'])?>
+		<?php echo $html->link('Edit','/users/edit/' . $user['User']['uid'])?>
+		<?php echo $html->link('Delete','/users/delete/' . $user['User']['uid'], null, 'Are you sure you want to delete id ' . $user['User']['uid'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New User', '/users/add'); ?></li>
+</ul>
+</div>
